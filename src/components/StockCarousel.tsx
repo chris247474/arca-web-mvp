@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { TrendingUp, TrendingDown } from "lucide-react";
@@ -17,10 +17,7 @@ interface Stock {
   tradingViewSymbol?: string;
 }
 
-// Custom symbols that don't use TradingView
-const customSymbols = ["LDM", "MIPANDA"];
-
-// todo: remove mock functionality
+// Stocks without a tradingViewSymbol use the custom SVG chart
 const popularStocks: Stock[] = [
   { symbol: "AAPL", name: "Apple Inc.", price: 189.43, change: 2.34, changePercent: 1.24, logoUrl: "https://logo.clearbit.com/apple.com", tradingViewSymbol: "NASDAQ:AAPL" },
   { symbol: "MIPANDA", name: "MiPanda Holdings", price: 128.50, change: 3.45, changePercent: 2.15, tagline: "Prominent milk tea chain in the Philippines" },
@@ -28,7 +25,7 @@ const popularStocks: Stock[] = [
   { symbol: "AMZN", name: "Amazon.com Inc.", price: 178.25, change: 3.45, changePercent: 1.87, logoUrl: "https://logo.clearbit.com/amazon.com", tradingViewSymbol: "NASDAQ:AMZN" },
 ];
 
-// Chart paths for custom stocks
+// Chart paths for custom (non-TradingView) stocks
 const chartPaths: Record<string, string> = {
   "LDM": "M 0 65 L 15 60 L 25 68 L 40 55 L 55 58 L 70 48 L 85 52 L 100 42 L 115 45 L 130 35 L 145 38 L 160 28 L 175 22 L 190 25 L 200 15",
   "MIPANDA": "M 0 70 L 12 62 L 28 67 L 45 52 L 60 56 L 75 45 L 90 50 L 105 38 L 120 42 L 140 30 L 155 35 L 170 22 L 185 28 L 200 12",
@@ -72,9 +69,12 @@ function CustomChart({ symbol, isPositive }: { symbol: string; isPositive: boole
 
 function TradingViewChart({ symbol }: { symbol: string }) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
 
   useEffect(() => {
-    if (!containerRef.current) return;
+    if (!containerRef.current || !mounted) return;
 
     const script = document.createElement("script");
     script.src = "https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js";
@@ -86,8 +86,8 @@ function TradingViewChart({ symbol }: { symbol: string }) {
       height: "100%",
       locale: "en",
       dateRange: "1D",
-      colorTheme: document.documentElement.classList.contains("dark") ? "dark" : "light",
-      isTransparent: true,
+      colorTheme: "light",
+      isTransparent: false,
       autosize: true,
       largeChartUrl: "",
       noTimeScale: true,
@@ -102,12 +102,13 @@ function TradingViewChart({ symbol }: { symbol: string }) {
         containerRef.current.innerHTML = "";
       }
     };
-  }, [symbol]);
+  }, [symbol, mounted]);
 
   return (
     <div
       ref={containerRef}
-      className="tradingview-widget-container h-32 w-full relative overflow-hidden"
+      className="tradingview-widget-container h-32 w-full relative overflow-hidden rounded-b-lg"
+      style={{ background: "hsl(var(--card))" }}
       data-testid={`chart-${symbol}`}
     >
       <style>{`
@@ -123,10 +124,10 @@ function TradingViewChart({ symbol }: { symbol: string }) {
 }
 
 function StockChart({ stock }: { stock: Stock }) {
-  if (customSymbols.includes(stock.symbol)) {
-    return <CustomChart symbol={stock.symbol} isPositive={stock.change >= 0} />;
+  if (stock.tradingViewSymbol) {
+    return <TradingViewChart symbol={stock.tradingViewSymbol} />;
   }
-  return <TradingViewChart symbol={stock.tradingViewSymbol || stock.symbol} />;
+  return <CustomChart symbol={stock.symbol} isPositive={stock.change >= 0} />;
 }
 
 export function StockCarousel() {
