@@ -45,7 +45,7 @@ export function CreateGroupModal({
   onOpenChange,
   onSuccess,
 }: CreateGroupModalProps) {
-  const { user } = useAuth();
+  const { user, isAuthenticated, isLoading, refreshProfile } = useAuth();
   const { toast } = useToast();
   const [isPending, startTransition] = useTransition();
 
@@ -80,20 +80,32 @@ export function CreateGroupModal({
       return;
     }
 
-    if (!user?.id) {
-      toast({
-        title: "Error",
-        description: "You must be signed in to create a group",
-        variant: "destructive",
-      });
-      return;
-    }
-
     startTransition(async () => {
+      let curatorId = user?.id;
+
+      if (!curatorId) {
+        if (isAuthenticated) {
+          // Profile not loaded yet - try refreshing
+          const profile = await refreshProfile();
+          curatorId = profile?.id;
+        }
+
+        if (!curatorId) {
+          toast({
+            title: "Error",
+            description: isAuthenticated
+              ? "Unable to load your profile. Please try again."
+              : "You must be signed in to create a group",
+            variant: "destructive",
+          });
+          return;
+        }
+      }
+
       const result = await createGroup({
         name: name.trim(),
         description: description.trim(),
-        curatorId: user.id,
+        curatorId,
         sector: sector || undefined,
         visibility,
       });
@@ -196,7 +208,7 @@ export function CreateGroupModal({
           <Button
             type="submit"
             className="w-full"
-            disabled={isPending}
+            disabled={isPending || isLoading}
             data-testid="button-create-group"
           >
             {isPending ? (

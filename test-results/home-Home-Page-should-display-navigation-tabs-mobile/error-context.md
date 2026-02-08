@@ -1,0 +1,336 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e5]:
+        - heading "ArCa" [level=1] [ref=e6]
+        - generic [ref=e7]:
+          - button [ref=e8] [cursor=pointer]:
+            - img
+          - button "Sign in" [ref=e9] [cursor=pointer]:
+            - img
+            - text: Sign in
+    - main [ref=e10]:
+      - generic [ref=e11]:
+        - heading "Market Trends" [level=2] [ref=e12]
+        - generic [ref=e14]:
+          - generic [ref=e16]:
+            - generic [ref=e17]:
+              - generic [ref=e18]:
+                - generic [ref=e20]: AA
+                - generic [ref=e21]:
+                  - heading "AAPL" [level=3] [ref=e22]
+                  - paragraph [ref=e23]: Apple Inc.
+              - generic [ref=e24]:
+                - generic [ref=e25]: $189.43
+                - generic [ref=e26]:
+                  - img [ref=e27]
+                  - text: +1.24%
+            - iframe [ref=e32]:
+              - generic [ref=f3e3]:
+                - link [ref=f3e5] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/symbols/NASDAQ-AAPL/?utm_campaign=mini-symbol-overview&utm_medium=widget&utm_source=localhost
+                  - table [ref=f3e9]:
+                    - row [ref=f3e10]:
+                      - cell
+                      - cell [ref=f3e11]
+                      - cell
+                - generic [ref=f3e15]:
+                  - link "Visit TradingView — financial charting platform and trading community":
+                    - /url: https://www.tradingview.com?utm_campaign=mini-symbol-overview-logo&utm_medium=widget&utm_source=localhost
+                  - img [ref=f3e17]
+                  - img [ref=f3e20]
+          - generic [ref=e34]:
+            - generic [ref=e35]:
+              - generic [ref=e37]:
+                - heading "MIPANDA" [level=3] [ref=e38]
+                - paragraph [ref=e39]: MiPanda Holdings
+                - paragraph [ref=e40]: Prominent milk tea chain in the Philippines
+              - generic [ref=e41]:
+                - generic [ref=e42]: $128.50
+                - generic [ref=e43]:
+                  - img [ref=e44]
+                  - text: +2.15%
+            - img [ref=e49]
+          - generic [ref=e53]:
+            - generic [ref=e54]:
+              - generic [ref=e56]:
+                - heading "LDM" [level=3] [ref=e57]
+                - paragraph [ref=e58]: LDM Technologies
+                - paragraph [ref=e59]: "#4 Driving School in the Philippines"
+              - generic [ref=e60]:
+                - generic [ref=e61]: $42.15
+                - generic [ref=e62]:
+                  - img [ref=e63]
+                  - text: +0.98%
+            - img [ref=e68]
+          - generic [ref=e72]:
+            - generic [ref=e73]:
+              - generic [ref=e74]:
+                - generic [ref=e76]: AM
+                - generic [ref=e77]:
+                  - heading "AMZN" [level=3] [ref=e78]
+                  - paragraph [ref=e79]: Amazon.com Inc.
+              - generic [ref=e80]:
+                - generic [ref=e81]: $178.25
+                - generic [ref=e82]:
+                  - img [ref=e83]
+                  - text: +1.87%
+            - iframe [ref=e88]:
+              - generic [ref=f1e3]:
+                - link [ref=f1e5] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/symbols/NASDAQ-AMZN/?utm_campaign=mini-symbol-overview&utm_medium=widget&utm_source=localhost
+                  - generic [ref=f1e8]:
+                    - table:
+                      - row:
+                        - cell
+                        - cell
+                        - cell
+                - generic [ref=f1e9]:
+                  - link "Visit TradingView — financial charting platform and trading community":
+                    - /url: https://www.tradingview.com?utm_campaign=mini-symbol-overview-logo&utm_medium=widget&utm_source=localhost
+                  - img [ref=f1e11]
+                  - img [ref=f1e14]
+          - generic [ref=e90]:
+            - generic [ref=e91]:
+              - generic [ref=e92]:
+                - generic [ref=e94]: AA
+                - generic [ref=e95]:
+                  - heading "AAPL" [level=3] [ref=e96]
+                  - paragraph [ref=e97]: Apple Inc.
+              - generic [ref=e98]:
+                - generic [ref=e99]: $189.43
+                - generic [ref=e100]:
+                  - img [ref=e101]
+                  - text: +1.24%
+            - iframe [ref=e106]:
+              - generic [ref=f4e9]:
+                - link "Visit TradingView — financial charting platform and trading community":
+                  - /url: https://www.tradingview.com?utm_campaign=mini-symbol-overview-logo&utm_medium=widget&utm_source=localhost
+                - img [ref=f4e11]
+                - img [ref=f4e14]
+          - generic [ref=e108]:
+            - generic [ref=e109]:
+              - generic [ref=e111]:
+                - heading "MIPANDA" [level=3] [ref=e112]
+                - paragraph [ref=e113]: MiPanda Holdings
+                - paragraph [ref=e114]: Prominent milk tea chain in the Philippines
+              - generic [ref=e115]:
+                - generic [ref=e116]: $128.50
+                - generic [ref=e117]:
+                  - img [ref=e118]
+                  - text: +2.15%
+            - img [ref=e123]
+          - generic [ref=e127]:
+            - generic [ref=e128]:
+              - generic [ref=e130]:
+                - heading "LDM" [level=3] [ref=e131]
+                - paragraph [ref=e132]: LDM Technologies
+                - paragraph [ref=e133]: "#4 Driving School in the Philippines"
+              - generic [ref=e134]:
+                - generic [ref=e135]: $42.15
+                - generic [ref=e136]:
+                  - img [ref=e137]
+                  - text: +0.98%
+            - img [ref=e142]
+          - generic [ref=e146]:
+            - generic [ref=e147]:
+              - generic [ref=e148]:
+                - generic [ref=e150]: AM
+                - generic [ref=e151]:
+                  - heading "AMZN" [level=3] [ref=e152]
+                  - paragraph [ref=e153]: Amazon.com Inc.
+              - generic [ref=e154]:
+                - generic [ref=e155]: $178.25
+                - generic [ref=e156]:
+                  - img [ref=e157]
+                  - text: +1.87%
+            - iframe [ref=e162]:
+              - generic [ref=f2e3]:
+                - link [ref=f2e5] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/symbols/NASDAQ-AMZN/?utm_campaign=mini-symbol-overview&utm_medium=widget&utm_source=localhost
+                  - generic [ref=f2e8]:
+                    - table:
+                      - row:
+                        - cell
+                        - cell
+                        - cell
+                - generic [ref=f2e9]:
+                  - link "Visit TradingView — financial charting platform and trading community":
+                    - /url: https://www.tradingview.com?utm_campaign=mini-symbol-overview-logo&utm_medium=widget&utm_source=localhost
+                  - img [ref=f2e11]
+                  - img [ref=f2e14]
+      - generic [ref=e163]:
+        - tablist [ref=e164]:
+          - tab "Browse" [selected] [ref=e165] [cursor=pointer]:
+            - img [ref=e166]
+            - generic [ref=e169]: Browse
+          - tab "Groups" [ref=e170] [cursor=pointer]:
+            - img [ref=e171]
+            - generic [ref=e176]: Groups
+          - tab "Deals" [ref=e177] [cursor=pointer]:
+            - img [ref=e178]
+            - generic [ref=e182]: Deals
+          - tab "Portfolio" [ref=e183] [cursor=pointer]:
+            - generic [ref=e186]: Portfolio
+        - tabpanel "Browse" [ref=e187]:
+          - paragraph [ref=e189]: Discover groups curated by experienced investors and apply to join
+          - generic [ref=e190]:
+            - img [ref=e191]
+            - textbox "Search groups..." [ref=e194]
+          - generic [ref=e195]:
+            - generic [ref=e196] [cursor=pointer]:
+              - generic [ref=e197]:
+                - generic [ref=e199]:
+                  - heading "Bayan Investment Group (BIG)" [level=3] [ref=e200]
+                  - generic [ref=e201]: Curated by Jerome Ubando
+                - paragraph [ref=e202]: Curated by Jerome Ubando. High cashflow SMEs with low EBITDA multiple asking prices.
+              - generic [ref=e203]:
+                - generic [ref=e204]:
+                  - generic [ref=e205]:
+                    - generic [ref=e206]:
+                      - img [ref=e207]
+                      - text: "8"
+                    - generic [ref=e212]:
+                      - img [ref=e213]
+                      - text: "12"
+                  - generic [ref=e216]:
+                    - generic [ref=e218]: JU
+                    - generic [ref=e220]: AC
+                    - generic [ref=e222]: BS
+                    - generic [ref=e224]: "+5"
+                - button "Apply to Join" [ref=e225]:
+                  - img
+                  - text: Apply to Join
+            - generic [ref=e226] [cursor=pointer]:
+              - generic [ref=e227]:
+                - generic [ref=e229]:
+                  - heading "SME Perpetual Dividend Fund (SPDF)" [level=3] [ref=e230]
+                  - generic [ref=e231]: Curated by Adriel Maniego
+                - paragraph [ref=e232]: Curated by Adriel Maniego. Fintech lender sourced SMEs with average yearly revenue of $5M.
+              - generic [ref=e233]:
+                - generic [ref=e234]:
+                  - generic [ref=e235]:
+                    - generic [ref=e236]:
+                      - img [ref=e237]
+                      - text: "12"
+                    - generic [ref=e242]:
+                      - img [ref=e243]
+                      - text: "24"
+                  - generic [ref=e246]:
+                    - generic [ref=e248]: AM
+                    - generic [ref=e250]: FL
+                    - generic [ref=e252]: GK
+                    - generic [ref=e254]: "+9"
+                - button "Apply to Join" [ref=e255]:
+                  - img
+                  - text: Apply to Join
+            - generic [ref=e256] [cursor=pointer]:
+              - generic [ref=e257]:
+                - generic [ref=e259]:
+                  - heading "Horizon Ventures" [level=3] [ref=e260]
+                  - generic [ref=e261]: Curated by Sarah Mitchell
+                - paragraph [ref=e262]: Curated by Sarah Mitchell. Focus on early-stage tech startups with global expansion potential.
+              - generic [ref=e263]:
+                - generic [ref=e264]:
+                  - generic [ref=e265]:
+                    - generic [ref=e266]:
+                      - img [ref=e267]
+                      - text: "24"
+                    - generic [ref=e272]:
+                      - img [ref=e273]
+                      - text: "45"
+                  - generic [ref=e276]:
+                    - generic [ref=e278]: SM
+                    - generic [ref=e280]: MT
+                    - generic [ref=e282]: LC
+                    - generic [ref=e284]: "+21"
+                - button "Apply to Join" [ref=e285]:
+                  - img
+                  - text: Apply to Join
+            - generic [ref=e286] [cursor=pointer]:
+              - generic [ref=e287]:
+                - generic [ref=e289]:
+                  - heading "Pacific Growth Partners" [level=3] [ref=e290]
+                  - generic [ref=e291]: Curated by James Wong
+                - paragraph [ref=e292]: Curated by James Wong. Southeast Asian markets and emerging fintech opportunities.
+              - generic [ref=e293]:
+                - generic [ref=e294]:
+                  - generic [ref=e295]:
+                    - generic [ref=e296]:
+                      - img [ref=e297]
+                      - text: "18"
+                    - generic [ref=e302]:
+                      - img [ref=e303]
+                      - text: "32"
+                  - generic [ref=e306]:
+                    - generic [ref=e308]: JW
+                    - generic [ref=e310]: NP
+                    - generic [ref=e312]: "+16"
+                - button "Apply to Join" [ref=e313]:
+                  - img
+                  - text: Apply to Join
+            - generic [ref=e314] [cursor=pointer]:
+              - generic [ref=e315]:
+                - generic [ref=e317]:
+                  - heading "Apex Capital Collective" [level=3] [ref=e318]
+                  - generic [ref=e319]: Curated by Robert Kim
+                - paragraph [ref=e320]: Curated by Robert Kim. Late-stage growth equity with focus on profitability metrics.
+              - generic [ref=e321]:
+                - generic [ref=e322]:
+                  - generic [ref=e323]:
+                    - generic [ref=e324]:
+                      - img [ref=e325]
+                      - text: "31"
+                    - generic [ref=e330]:
+                      - img [ref=e331]
+                      - text: "67"
+                  - generic [ref=e334]:
+                    - generic [ref=e336]: RK
+                    - generic [ref=e338]: AL
+                    - generic [ref=e340]: DC
+                    - generic [ref=e342]: "+28"
+                - button "Apply to Join" [ref=e343]:
+                  - img
+                  - text: Apply to Join
+            - generic [ref=e344] [cursor=pointer]:
+              - generic [ref=e345]:
+                - generic [ref=e347]:
+                  - heading "Verde Impact Fund" [level=3] [ref=e348]
+                  - generic [ref=e349]: Curated by Elena Rodriguez
+                - paragraph [ref=e350]: Curated by Elena Rodriguez. ESG-focused investments in renewable energy and sustainable tech.
+              - generic [ref=e351]:
+                - generic [ref=e352]:
+                  - generic [ref=e353]:
+                    - generic [ref=e354]:
+                      - img [ref=e355]
+                      - text: "15"
+                    - generic [ref=e360]:
+                      - img [ref=e361]
+                      - text: "28"
+                  - generic [ref=e364]:
+                    - generic [ref=e366]: ER
+                    - generic [ref=e368]: TG
+                    - generic [ref=e370]: "+13"
+                - button "Apply to Join" [ref=e371]:
+                  - img
+                  - text: Apply to Join
+  - navigation [ref=e372]:
+    - generic [ref=e373]:
+      - button "Home" [ref=e374] [cursor=pointer]:
+        - img [ref=e375]
+        - generic [ref=e378]: Home
+      - button [ref=e379] [cursor=pointer]:
+        - img [ref=e380]
+      - button [ref=e385] [cursor=pointer]:
+        - img [ref=e386]
+      - button [ref=e389] [cursor=pointer]:
+        - img [ref=e390]
+  - region "Notifications (F8)":
+    - list
+  - button "Open Next.js Dev Tools" [ref=e398] [cursor=pointer]:
+    - img [ref=e399]
+  - alert [ref=e402]
+```

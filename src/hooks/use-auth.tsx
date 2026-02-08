@@ -23,7 +23,7 @@ interface AuthContextType {
   // Actions
   login: () => void;
   logout: () => Promise<void>;
-  refreshProfile: () => Promise<void>;
+  refreshProfile: () => Promise<UserProfile | null>;
 
   // Role helpers
   hasRole: boolean;
@@ -39,19 +39,21 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [isLoadingProfile, setIsLoadingProfile] = useState(false);
 
   // Fetch user profile from Supabase
-  const fetchProfile = useCallback(async () => {
+  const fetchProfile = useCallback(async (): Promise<UserProfile | null> => {
     if (!privyUser?.id) {
       setUserProfile(null);
-      return;
+      return null;
     }
 
     setIsLoadingProfile(true);
     try {
       const profile = await getUserProfile(privyUser.id);
       setUserProfile(profile);
+      return profile;
     } catch (error) {
       console.error("Failed to fetch user profile:", error);
       setUserProfile(null);
+      return null;
     } finally {
       setIsLoadingProfile(false);
     }
@@ -84,9 +86,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
   }, [authenticated, privyUser?.id, fetchProfile]);
 
-  // Refresh profile (can be called manually)
-  const refreshProfile = useCallback(async () => {
-    await fetchProfile();
+  // Refresh profile (can be called manually, returns the profile)
+  const refreshProfile = useCallback(async (): Promise<UserProfile | null> => {
+    return await fetchProfile();
   }, [fetchProfile]);
 
   // Custom logout that clears profile
@@ -134,7 +136,7 @@ export function useAuth(): AuthContextType {
       privyUser: null,
       login: () => {},
       logout: async () => {},
-      refreshProfile: async () => {},
+      refreshProfile: async () => null,
       hasRole: false,
       isCurator: false,
       isInvestor: false,
